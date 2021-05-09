@@ -3,7 +3,7 @@ const numMessages = 3; // in a real-world situation, this would likely make an A
 messageNotifications.innerText = numMessages
 
 const signOutButton = document.getElementById("sign-out-button")
-signOutButton.addEventListener("click", () => alert("Thank you for clicking sign out"))
+signOutButton.addEventListener("click", () => alert("Thank you for trying to sign out, but unfortunately, that is not currently an option."))
 
 /* Get all rows (and their parent) so that we can manipulate them */
 const tableRowsParent = document.getElementById("table-rows")
