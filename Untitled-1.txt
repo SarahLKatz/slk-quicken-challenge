@@ -1,0 +1,44 @@
+Order Thoughts:
+
+- Company Name & Nav - Time: 1 hr
+    - Mobile Layout
+    - Confirm interactivity
+    - Confirm on Desktop
+    TO-DO:
+    - Messages circle! - could be better aligned?
+- Table - 1 hr
+    - Mobile Layout
+    - Confirm on Desktop
+    TO-DO:
+    - a11y - table name
+- "Sales" and Quarter Clickables - 2 hr
+    - Mobile Layout
+    - Quarter Filtering Functionality
+    - Confirm layout & functionality on Desktop
+- Sorting Functionality - 2 hr
+    - Sort by sales (mobile & desktop)
+    - Sort by salesperson (mobile & desktop)
+
+
+Next Steps:
+- Small Adjustments
+    - Background color full-length
+    - Messages circle
+    - Give the sign out alert some personality
+- README
+- Deploy
+
+
+Prep Time: 0.5 hours
+Total timeboxed design/functionality time: 6 hours
+Cleanup/README time: 0.5 hours
+Total Expected Time: 7 hours
+
+Time Spent:
+Thursday 5/6 - 30 minutes, prep/setup
+Thursday 5/6 - 70 minutes, company name and nav
+Friday 5/7 - 40 minutes, table setup
+Saturday 5/8 - 70 minutes, filtering & filtering layout
+Sunday 5/9 - 60 minutes, sorting
+
+Total Time: 4 hours, 30 minutes

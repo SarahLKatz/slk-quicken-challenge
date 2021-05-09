@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.white-on-black {
+    background-color: black;
+    color: white;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    width: 100%;
+    padding: 16px 16px;
+}
+
+a {   
+    color: white;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    border-bottom: 1px solid white;
+}
+
+#company-name {
+    text-align: center;
+    font-size: 24px;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    margin: 0;
+}
+
+nav {
+    grid-column: 1;
+    grid-row: 2;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    margin-top: 8px;
+    font-size: 20px;
+}
+
+nav a {
+    margin-right: 32px;
+}
+
+.white-on-blue {
+    background-color: #3E49EB;
+    color: white;
+}
+
+#message-notifications {
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 12px;
+    margin-left: -32px;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+header button {
+    grid-column: 2;
+    grid-row: 2;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+}
+
+#sales-header {
+    margin-top: 0;
+    padding-top: 16px;
+    padding-left: 8px;
+    font-size: 48px;
+}
+
+.content {
+    max-width: 500px;
+    padding: 8px;
+    margin: 0 auto;
+}
+
+.quarter-filter-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+td, th {
+    border: 1px solid darkgray;
+    padding: 16px;
+}
+
+thead {
+    border-bottom: 4px solid darkgrey;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+thead button {
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+tbody td {
+    color: black;
+}
+
+tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: lightgrey;
+}
+
+@media only screen and (min-width: 786px) {
+    header {
+        grid-template-columns: 20% 1fr auto;
+        grid-template-rows: auto;
+        padding: 16px;
+    }
+
+    #company-name {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: left;
+    }
+
+    nav {
+        grid-column: 2;
+        grid-row: 1;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4px;
+    }
+
+    header button {
+        grid-column: 3;
+        grid-row: 1;  
+        justify-content: end;  
+        align-items: center;
+    }
+
+    #sales-header {
+        padding: 16px 0;
+        width: 516px;
+        margin: 0 auto;
+    }
+}
