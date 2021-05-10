@@ -15,9 +15,9 @@ I set up time limits for each part of the project, and made a schedule that maxe
 - Saturday 5/8 - 70 minutes, filtering & filtering layout
 - Sunday 5/9 - 60 minutes, sorting
 - Sunday 5/9 - 40 minutes, deploying and writing README
-- Monday 5/10 - 20 minutes, cleanup and sending it over
+- Monday 5/10 - 30 minutes, cleanup, fix a sorting bug, and sending it over
 
-**Total Time: 5 hours, 30 minutes**
+**Total Time: 5 hours, 40 minutes**
 
 ## Viewing the Project
 There are two ways to view this project:
@@ -28,6 +28,7 @@ There are two ways to view this project:
 - **CSS Grid** - I used CSS grid to lay out the header for this project because I wanted something that I could easily adjust. I've used CSS grid in the past and have found that it helps in creating flexible layouts. I was able to make this decision because I knew that I did not need to support older browsers. If you were to open this project in Internet Explorer, the header would not look as expected (also none of the JavaScript seems to work, but that could just be my IE settings).
 - **Interactivity in Nav/Header** - There was no guidance as to the interactivity in the header, so I decided to have all links direct to the current page. I had initially set up a `console.log()` for when the "Sign Out" button is clicked, but because that would only be visible with the console open (and I wasn't sure if this project would be reviewed with the console open), I decided instead to do an alert.
 - **Accessibility** - The instructions said that the product should pass an accesibility test through the Axe browser extension. However, I don't have access to that paid tool, and rather than set up a free trial just for this project, I decided to use a free tool (that I use with some regularity at my current company), the [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html) browser extension.
+- **Filtering and Sorting Bug** - I encountered a bug where if I changed the sort order while the data was filtered (meaning, not showing all 12 months), rather than sorting the filtered data, it removed the filtering and displayed all 12 months. I fixed this bug (by sorting the rows that were visible, not all of the possible rows like I had originally done), but noticed that when I changed the filtering, the sort order returned to being chronological, even if it had previously been a different sort order. I decided to leave this as expected behavior because I thought that if the user was looking for a particular quarter's data, they would likely expect to see that data in chronological order and then could sort if desired.
 
 ## Struggles/Difficulties
 - **Sizing, Spacing, and Padding** - I struggled a lot with font sizes, table size, spacing, and padding. I'm used to working with either annotated designs or designs that I can inspect (generally using InVision), and it was hard for me to know whether my decisions were anywhere close to correct.

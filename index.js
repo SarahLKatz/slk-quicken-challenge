@@ -5,13 +5,12 @@ messageNotifications.innerText = numMessages
 const signOutButton = document.getElementById("sign-out-button")
 signOutButton.addEventListener("click", () => alert("Thank you for trying to sign out, but unfortunately, that is not currently an option."))
 
-/* Get all rows (and their parent) so that we can manipulate them */
+/* Filtering By Quarter */
 const tableRowsParent = document.getElementById("table-rows")
 const tableRows = tableRowsParent.children
 
 const allRows = [...tableRows]
 
-/* Filtering By Quarter */
 const checkboxes = document.querySelectorAll("input[type='checkbox']")
 const checkedCheckboxes = {
     q1: false,
@@ -81,15 +80,16 @@ const sortBySales = (rows, isAsc) => {
 }
 
 sortBySalesButton.addEventListener('click', () => {
-    const newSortIdx = (currentSortIdx+1)%3
+    const newSortIdx = (currentSortIdx + 1) % 3
     currentSortIdx = newSortIdx
     const currSortOrder = sortOrder[currentSortIdx]
-    allRows.forEach(row => row.remove())
+    const visibleRows = [...document.getElementById("table-rows").children]
+    visibleRows.forEach(row => row.remove())
     let sortedRows = []
     if (currSortOrder === "chronological") {
-        sortedRows = sortRowsChronologically(allRows)
+        sortedRows = sortRowsChronologically(visibleRows)
     } else {
-        sortedRows = sortBySales(allRows, currSortOrder === "ascending")
+        sortedRows = sortBySales(visibleRows, currSortOrder === "ascending")
         tableHeaders[0].setAttribute("aria-sort", "none")
         tableHeaders[1].setAttribute("aria-sort", currSortOrder)
     }
@@ -101,18 +101,19 @@ let sortBySalesperson = false;
 const sortBySalespersonButton = document.getElementById("sort-salesperson");
 sortBySalespersonButton.addEventListener('click', () => {
     sortBySalesperson = !sortBySalesperson
-    allRows.forEach(row => row.remove())
+    const visibleRows = [...document.getElementById("table-rows").children]
+    visibleRows.forEach(row => row.remove())
     if (sortBySalesperson) {
         tableHeaders[0].setAttribute("aria-sort", "none")
         tableHeaders[2].setAttribute("aria-sort", "ascending")
-        const rowsSortedBySalesperson = allRows.sort((rowA, rowB) => {
+        const rowsSortedBySalesperson = visibleRows.sort((rowA, rowB) => {
             const salespersonA = rowA.children[2].innerText
             const salespersonB = rowB.children[2].innerText
             return salespersonA > salespersonB ? 1 : -1
         })
         rowsSortedBySalesperson.forEach(row => tableRowsParent.appendChild(row))
     } else {
-        const rowsSortedChronologically = sortRowsChronologically(allRows)
+        const rowsSortedChronologically = sortRowsChronologically(visibleRows)
         rowsSortedChronologically.forEach(row => tableRowsParent.appendChild(row))
     }
 })
